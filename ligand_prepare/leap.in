@@ -1,7 +1,0 @@
-source leaprc.ff14SB
-source leaprc.gaff
-loadamberparams ligand_resp.frcmod
-lig=loadmol2 ligand_resp.mol2
-check lig
-saveamberparm lig ligand.prmtop ligand.inpcrd
-quit

@@ -18,13 +18,13 @@ while (my $line = <$fh_ligand_top>) {
         }
     }
 }
-close $fh_ligand_top
+close $fh_ligand_top;
 
 my $atomtypes = "\n; changing added GAFF atom for EDY\n" . $atomtypes;
 
 
 # 打开另一个文本文件，将其读入到一个字符串中
-my $ffnonbonded_file = './ffnonbonded.itp';#此处要修改
+my $ffnonbonded_file = './amber14sb_parmbsc1.ff/ffnonbonded.itp';#此处要修改
 open(my $fh_ffnonbonded, '<', $ffnonbonded_file) or die "无法打开文件: $!";
 my $other_text = do { local $/; <$fh_ffnonbonded> };
 close($fh_ffnonbonded);

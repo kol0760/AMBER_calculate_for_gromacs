@@ -2,7 +2,7 @@
 #一个自动化计算小分子拓扑和蛋白质拓扑的脚本
 #小分子采用GAFF力场
 
-source /home/yun/miniconda3/envs/AmberTools22/amber.sh
+source ~/miniconda3/envs/AmberTools22/amber.sh
 
 #新建一个专门用于配体处理的文件夹
 mkdir ligand_prepare
@@ -41,10 +41,10 @@ mv top/EDY_GMX.gro top/ligand.gro
 mv top/EDY_GMX.top top/ligand.top
 mv top/posre_EDY.itp top/ligand.itp
 
-echo -e "1\n1" |/home/yun/app/GROMACS/bin/gmx pdb2gmx -f protein.pdb -o protein.gro
+echo -e "1\n1" | ~/app/GROMACS/bin/gmx pdb2gmx -f protein.pdb -o protein.gro
 
+cp ./amber14sb_parmbsc1.ff/ffnonbonded.itp ./amber14sb_parmbsc1.ff/ffnonbonded_origin.itp
 #此时会生成有关蛋白质的拓扑文件
-#cp perl.pl ./top
-#perl top/perl.pl
-#cat ligand_molecular_type.out >> amber14sb_parmbsc1.ff/ffnonbonded.itp
+
+#perl.pl负责内容
 perl perl.pl
