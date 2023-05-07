@@ -2,6 +2,11 @@
 #一个自动化计算小分子拓扑和蛋白质拓扑的脚本
 #小分子采用GAFF力场
 
+#下载力场并解压
+wegt https://ftp.gromacs.org/contrib/forcefields/amber14sb_parmbsc1.ff.tar.gz
+tar -xf amber14sb_parmbsc1.ff.tar.gz
+rm amber14sb_parmbsc1.ff.tar.gz
+
 source ~/miniconda3/envs/AmberTools22/amber.sh
 
 #新建一个专门用于配体处理的文件夹

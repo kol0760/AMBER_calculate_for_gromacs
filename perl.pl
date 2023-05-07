@@ -95,7 +95,7 @@ while (my $line = <$fh>) {
 }
 close($fh);
 
-my $output = "ligand.top";   # 输出文件的路径和名称
+my $output = "ligand.itp";   # 输出文件的路径和名称
 open(my $output_fh, '>', $output) or die "无法打开文件 '$output' $!";
 
 
@@ -138,7 +138,7 @@ rename 'temp.top', 'topol.top' or die "Could not rename temporary file: $!";
 
 #生成配体的位置限制文件
 # 打开文件ligand.top
-open my $fh, '<', 'ligand.top' or die "Cannot open file: $!";
+open my $fh, '<', 'ligand.itp' or die "Cannot open file: $!";
 
 # 定义变量
 my @result;
@@ -171,7 +171,7 @@ $heave_atoms .= "\n";
 $heave_atoms =~ s/\n/\t1\tPOSRES_LIG_FC\tPOSRES_LIG_FC\tPOSRES_LIG_FC\n/g;
 
 my $ligand_posre = 0;
-$ligand_posre = "\#添加配体的位置限制\n[ position_restraints ]\n; atom  type      fx      fy      fz\n" . $heave_atoms;
+$ligand_posre = "\n[ position_restraints ]\n; atom  type      fx      fy      fz\n" . $heave_atoms;
 
 # 将变量保存为文件
 my $file_ligand_posre = "ligand_posre.itp";
