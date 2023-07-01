@@ -3,7 +3,7 @@
 #小分子采用GAFF力场
 
 #下载力场并解压
-wegt https://ftp.gromacs.org/contrib/forcefields/amber14sb_parmbsc1.ff.tar.gz
+wget https://ftp.gromacs.org/contrib/forcefields/amber14sb_parmbsc1.ff.tar.gz
 tar -xf amber14sb_parmbsc1.ff.tar.gz
 rm amber14sb_parmbsc1.ff.tar.gz
 
